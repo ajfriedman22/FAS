@@ -170,85 +170,11 @@ def test_confs(align_target, align_section, chain, d, prev_name=None):
             save_pdb(d, i, prev_name, chain_coordinates)
 
             #Perform energy minimization
-            num_pass += energy_min(sect_interest[d], prev_name, i)
+            if gmx_executable != None:
+                num_pass += energy_min(sect_interest[d], prev_name, i)
+            else:
+                num_pass += 1
     return num_pass
-
-def old_save_pdb(chain_add, dir, i, chain_prev, prev_name):
-    #If directory does not exsist then mkdir
-    if not os.path.exists(dir):
-        os.mkdir(dir)
-
-    #If atoms are to be added to previous chain
-    dup_atoms = []
-    if prev_name != None:
-        prev_top = chain_prev.topology
-        xyz_prev = chain_prev.xyz
-        #Get list of atoms in previous chain
-        for a in prev_top.atoms:
-            dup_atoms.append(str(a))
-    
-        #Get index values for all atoms present in the previous structure
-        index_old_atoms = np.linspace(0, prev_top.n_atoms-1, num=prev_top.n_atoms, dtype=int)
-
-    #Get topology of chain to add
-    chain_add_top = chain_add.topology
-
-    #Create empty array for atom indices to be removed from chain
-    rm_indices = []
-    
-    #Loop through all atoms from raw chain
-    index, rm, n = 0, 0, 0
-    while rm < len(dup_atoms) + 2 and index < chain_add_top.n_atoms:
-        a = str(chain_add_top.atom(index))
-        res, atom_name = a.split('-')
-        if a in dup_atoms: #Don't add duplicate atoms or extra Hs
-            chain_add_top.delete_atom_by_index(index)
-            rm_indices.append(n)
-        elif atom_name in ['HR1', 'HR2']:
-            chain_add_top.delete_atom_by_index(index)
-            rm_indices.append(n)
-        else:
-            index += 1
-        n += 1
-
-    #Remove Hs from xyz coordinates too
-    xyz_add = np.delete(chain_add.xyz, rm_indices, axis=1)
-
-    #Create trajectory from new XYZ coordinates and topology
-    chain_add_clean = md.Trajectory(xyz=xyz_add, topology=chain_add_top)
-
-    if prev_name == None:
-        #Just save file
-        chain_add_clean.save_pdb(f'{dir}/{i}.pdb')
-        return 1
-    else:
-        #Combine topologies
-        top_combine = prev_top.join(chain_add_top)
-
-        #Combine xyz coordinates
-        xyz_combine = np.concatenate((xyz_prev, xyz_add), axis=1)
-
-        #Create combined trajectory 
-        combine_traj = md.Trajectory(xyz=xyz_combine, topology=top_combine)
-
-        #Filter out conformations which put newly added atoms too close to old ones
-        all_coor = combine_traj.xyz[0]
-        index_add = np.linspace(prev_top.n_atoms, combine_traj.n_atoms-1, num=chain_add_clean.n_atoms, dtype=int)
-        clash_atom = 0
-        for x in index_old_atoms:
-            for y in index_add:
-                dist = math.dist(all_coor[x,:], all_coor[y,:])
-                if dist <= 0.15: #Clash present
-                    clash_atom += 1
-            if clash_atom > 2:
-                break 
-
-        if clash_atom < 2:
-            #Save new pdb
-            combine_traj.save_pdb(f'{dir}/{prev_name}_{i}.pdb')
-            return 1
-        else:
-            return 0
 
 def get_new_section(file_name, i):
     full_file = open(file_name).readlines()
@@ -406,21 +332,24 @@ def sort_confs(dir, all_file_names, lc_lim):
 
 # Declare arguments
 parser = argparse.ArgumentParser(description = 'Sort through chain poses to determine potential complexes')
-parser.add_argument('-target', required=True, help='PDB for Protein Complex')
-parser.add_argument('-chain', required=False, default='./', help= 'Folder containing PDBs for Chain Conformations')
-parser.add_argument('-cores', required=False, default=1, type=int, help='# of cores to use')
-parser.add_argument('-length', required=False, default=4, type=int, help='Length of acyl chain to build')
-parser.add_argument('-gmx', required=False, default=None, type=str, help='Executable path for gromacs')
-parser.add_argument('-res', required=True, type=int, help='Residue ID to grow shain')
+parser.add_argument('-t', '-target', required=True, help='PDB for Protein Complex')
+parser.add_argument('-c', '-chain', required=False, default='./', help= 'Folder containing PDBs for Chain Conformations')
+parser.add_argument('-r', '-cores', required=False, default=1, type=int, help='# of cores to use')
+parser.add_argument('-l', '-length', required=False, default=4, type=int, help='Length of acyl chain to build')
+parser.add_argument('-s', '-start', required=False, default=0, type=int, help='Length of acyl chain in input file (0 if SER residue only)')
+parser.add_argument('-g', '-gmx', required=False, default=None, type=str, help='Executable path for gromacs (Energy minimization will not be performed if not provided)')
+parser.add_argument('-i', '-res', required=True, type=int, help='Residue ID to grow chain')
+
 
 #Import Arguments
 args = parser.parse_args()
-target_pdb = args.target
-chain_pdb = args.chain
-cores = args.cores
-length = args.length
-gmx_executable = args.gmx
-res_insert = args.res
+target_pdb = args.t
+chain_pdb = args.c
+cores = args.r
+length = args.l
+start_length = args.s
+gmx_executable = args.g
+res_insert = args.i
 
 #Load FabG-ACP complex
 target = md.load(target_pdb)
@@ -434,29 +363,34 @@ cat_triad = target.atom_slice(target.topology.select('resid 136 or resid 149 or 
 cat_triad_coors = cat_triad.xyz[0]
 del target
 
-#List all present sections of interest
-sect_interest = ['AB', 'BC', 'CD', 'DE', 'EF', 'FG']
-#List alignment atoms for each section
-align_atoms = ['name N or name CA or name C or name O or name CB', 
-               'name O1 or name P or name O2 or name O4', 
-               'name C1 or name C2 or name C3',
-               'name N1 or name C6 or name O6', 
-               'name C7 or name C8 or name C9', 
-               'name C10 or name C11 or name S',
-               'name C13 or name C14 or name C15',
-               'name C15 or name C16 or name C17',
-               'name C17 or name C18 or name C19']    
-if length >= 6:
-    sect_interest.append('GH')
-    align_atoms.append()
-    if length >= 8:
-        sect_interest.append('HI')
-        align_atoms.append()
-        if length >= 10:
-            sect_interest.append('IJ')
-            align_atoms.append()
-elif length != 4:
+#Check that length and start_length are compatible
+if start_length != 0 and start_length != 4 and start_length != 6 and start_length != 8:
+    raise Exception(f'Starting Length of {start_length} is not supported')
+if length%2 != 0 or length > 10 or length < 4:
     raise Exception(f'Length of {length} is not supported')
+
+#Determine Sections of Interest
+if start_length == 0:
+    #List all desired base sections of interest to add
+    sect_interest = ['AB', 'BC', 'CD', 'DE', 'EF', 'FG'] #up to C4
+    #List alignment atoms for all sections
+    align_atoms = ['name N or name CA or name C or name O or name CB', 
+                'name O1 or name P or name O2 or name O4', 
+                'name C1 or name C2 or name C3',
+                'name N1 or name C6 or name O6', 
+                'name C7 or name C8 or name C9', 
+                'name C10 or name C11 or name S',
+                'name C13 or name C14 or name C15',
+                'name C15 or name C16 or name C17',
+                'name C17 or name C18 or name C19']
+else:
+    sect_interest = []
+    align_atoms = ['name C13 or name C14 or name C15',
+                'name C15 or name C16 or name C17',
+                'name C17 or name C18 or name C19']
+potential_add_sect = ['GH', 'HI', 'IJ']
+for s in range(int((length-4)/2)):
+    sect_interest.append(potential_add_sect[s])
 
 #Initialize time counter
 t = time.time()
@@ -475,7 +409,6 @@ for d, sect in enumerate(sect_interest):
         else:
             align_target_name_all = next(os.walk(sect_interest[d-1]), (None, None, []))[2]
             #RMSD clustering on growing residue to sort conformers
-            lc_lim=6
             align_target_name = sort_confs(sect_interest[d-1], align_target_name_all, lc_lim=6)
             print(f'{len(align_target_name)} Unique Structures Found from Section {sect_interest[d-1]}')
 
@@ -483,8 +416,10 @@ for d, sect in enumerate(sect_interest):
         sect_conf = md.load(f'{chain_pdb}/{sect}_conformers_unique.pdb')
         
         num_confs = []
-        Parallel(n_jobs=cores)(delayed(process_file)(sect_conf, d, n, align_atoms[d]) for n in align_target_name)
-
+        #Parallel(n_jobs=cores)(delayed(process_file)(sect_conf, d, n, align_atoms[d]) for n in align_target_name)
+        for n in align_target_name:
+            process_file(sect_conf, d, n, align_atoms[d])
+        
         print(f'{sect_interest[d]}: {sum(num_confs)} Conformations in {np.round((time.time()-t)/60,2)} minutes')
         t = time.time()
 final_name_list = sort_confs(sect_interest[-1], next(os.walk(sect_interest[-1]), (None, None, []))[2], lc_lim=10)
