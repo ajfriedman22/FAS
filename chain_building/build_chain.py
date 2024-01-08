@@ -381,13 +381,13 @@ if start_length == 0:
                 'name C7 or name C8 or name C9', 
                 'name C10 or name C11 or name S',
                 'name C13 or name C14 or name C15',
-                'name C15 or name C16 or name C17',
-                'name C17 or name C18 or name C19']
+                'name C16 or name C17 or name H25',
+                'name C18 or name C19 or name H29']
 else:
     sect_interest = []
     align_atoms = ['name C13 or name C14 or name C15',
-                'name C15 or name C16 or name C17',
-                'name C17 or name C18 or name C19']
+                'name C16 or name C17',
+                'name C18 or name C19']
 potential_add_sect = ['GH', 'HI', 'IJ']
 for s in range(int((length-4)/2)):
     sect_interest.append(potential_add_sect[s])
