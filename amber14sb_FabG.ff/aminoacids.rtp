@@ -3723,7 +3723,13 @@
    C24   C25
    C25   H43
    C25   H44
-   C25   HE1
+   C25   C26
+   C26   H45
+   C26   H46
+   C26   C27
+   C27   H47
+   C27   H48
+   C27   HE1
     -C     N
 
  [ impropers ]
