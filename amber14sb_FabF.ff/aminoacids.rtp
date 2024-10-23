@@ -3399,6 +3399,238 @@
  [ impropers ]
     CA    +N     C     O
 
+; CYS w/ attached acyl chain
+[ CYA ]
+ [ atoms]
+     N    N           -0.59469     1
+     H    H            0.33271     2
+    CA   CX            0.04991     3
+    HA   H1            0.10191     4
+    CB   CT           -0.04609     5
+   HB1   H1            0.10591     6
+   HB2   H1            0.10591     7
+     C    C            0.63831     8
+     O    O           -0.60389     9
+     S    S           -0.23649    10
+    C1    C            0.58891    11
+    O1    O           -0.53789    12
+    C2   CT           -0.16419    13
+    C3   CT           -0.07019    14
+    C4   CT           -0.08219    15
+    C5   CT           -0.07019    16
+    C6   CT           -0.09689    17
+   HC1   HC            0.07941    18
+   HC2   HC            0.07941    19
+   HD1   HC            0.05841    20
+   HD2   HC            0.05841    21
+   HE1   HC            0.04791    22
+   HE2   HC            0.04791    23
+   HF1   HC            0.03991    24
+   HF2   HC            0.03991    25
+   HG1   HC            0.04258    26
+   HG2   HC            0.04258    27
+   HG3   HC            0.04258    28
+ 
+ [ bonds ]
+     N     H
+     N    CA
+    CA    HA
+    CA     C
+     C     O
+    CA    CB
+    CB   HB1
+    CB   HB2
+    CB     S
+     S    C1
+    C1    O1
+    C1    C2
+    C2    C3
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
+    C3    C4
+    C4   HE1
+    C4   HE2
+    C4    C5
+    C5   HF1
+    C5   HF2
+    C5    C6
+    C6   HG1
+    C6   HG2
+    C6   HG3          
+    -C     N
+
+ [ impropers ]
+    -C    CA     N     H
+    CA    +N     C     O
+
+[ CYB ]
+ [ atoms]
+     N    N           -0.59431     1
+     H    H            0.33209     2
+    CA   CX            0.04929     3
+    HA   H1            0.10129     4
+    CB   CT           -0.04671     5
+   HB1   H1            0.10529     6
+   HB2   H1            0.10529     7
+     C    C            0.63769     8
+     O    O           -0.60451     9
+     S    S           -0.23811    10
+    C1    C            0.58829    11
+    O1    O           -0.53851    12
+    C2   CT           -0.16481    13
+    C3   CT           -0.07081    14
+    C4   CT           -0.08281    15
+    C5   CT           -0.06881    16
+    C6   CT           -0.08381    17
+    C7   CT           -0.07581    18
+    C8   CT           -0.08951    19
+   HC1   HC            0.07879    22
+   HC2   HC            0.07879    23
+   HD1   HC            0.05779    24
+   HD2   HC            0.05779    25
+   HE1   HC            0.04829    26
+   HE2   HC            0.04829    27
+   HF1   HC            0.04079    28
+   HF2   HC            0.04079    39
+   HG1   HC            0.05529    30
+   HG2   HC            0.05529    31
+   HH1   HC            0.03879    32
+   HH2   HC            0.03879    33
+   HI1   HC            0.03329    34
+   HI2   HC            0.03329    35
+   HI3   HC            0.03329    36
+ 
+ [ bonds ]
+     N     H
+     N    CA
+    CA    HA
+    CA     C
+     C     O
+    CA    CB
+    CB   HB1
+    CB   HB2
+    CB     S
+     S    C1
+    C1    O1
+    C1    C2
+    C2    C3
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
+    C3    C4
+    C4   HE1
+    C4   HE2
+    C4    C5
+    C5   HF1
+    C5   HF2
+    C5    C6
+    C6   HG1
+    C6   HG2
+    C6    C7
+    C7   HH1
+    C7   HH2
+    C7    C8                
+    C8   HI1
+    C8   HI2
+    C8   HI3          
+    -C     N
+
+ [ impropers ]
+    -C    CA     N     H
+    CA    +N     C     O
+
+[ CYC ]
+ [ atoms]
+     N    N           -0.59472     1
+     H    H            0.33168     2
+    CA   CX            0.04888     3
+    HA   H1            0.10088     4
+    CB   CT           -0.04712     5
+   HB1   H1            0.10488     6
+   HB2   H1            0.10488     7
+     C    C            0.63728     8
+     O    O           -0.60492     9
+     S    S           -0.23852    10
+    C1    C            0.58788    11
+    O1    O           -0.53892    12
+    C2   CT           -0.16522    13
+    C3   CT           -0.07122    14
+    C4   CT           -0.08322    15
+    C5   CT           -0.06922    16
+    C6   CT           -0.08422    17
+    C7   CT           -0.07522    18
+    C8   CT           -0.07722    19
+    C9   CT           -0.07822    20
+   C10   CT           -0.08992    21
+   HC1   HC            0.07838    22
+   HC2   HC            0.07838    23
+   HD1   HC            0.05738    24
+   HD2   HC            0.05738    25
+   HE1   HC            0.04788    26
+   HE2   HC            0.04788    27
+   HF1   HC            0.04038    28
+   HF2   HC            0.04038    39
+   HG1   HC            0.05538    30
+   HG2   HC            0.05538    31
+   HH1   HC            0.03938    32
+   HH2   HC            0.03938    33
+   HI1   HC            0.04088    34
+   HI2   HC            0.04088    35
+   HJ1   HC            0.03988    36
+   HJ2   HC            0.03988    37
+   HK1   HC            0.03421    38
+   HK2   HC            0.03421    39
+   HK3   HC            0.03421    40
+ 
+ [ bonds ]
+     N     H
+     N    CA
+    CA    HA
+    CA     C
+     C     O
+    CA    CB
+    CB   HB1
+    CB   HB2
+    CB     S
+     S    C1
+    C1    O1
+    C1    C2
+    C2    C3
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
+    C3    C4
+    C4   HE1
+    C4   HE2
+    C4    C5
+    C5   HF1
+    C5   HF2
+    C5    C6
+    C6   HG1
+    C6   HG2
+    C6    C7
+    C7   HH1
+    C7   HH2
+    C7    C8                
+    C8   HI1
+    C8   HI2
+    C8    C9
+    C9   HJ1
+    C9   HJ2
+    C9   C10
+   C10   HK1
+   C10   HK2
+   C10   HK3          
+    -C     N
+
+ [ impropers ]
+    -C    CA     N     H
+    CA    +N     C     O
+
 [ CYD ]
  [ atoms]
      N    N           -0.59501     1
@@ -3424,29 +3656,29 @@
    C10   CT           -0.07551    21
    C11   CT           -0.07751    22
    C12   CT           -0.09021    23
-    H1   HC            0.07809    24
-    H2   HC            0.07809    25
-    H3   HC            0.05709    26
-    H4   HC            0.05709    27
-    H5   HC            0.04759    28
-    H6   HC            0.04759    29
-    H8   HC            0.04009    30
-    H9   HC            0.04009    31
-   H10   HC            0.05509    32
-   H11   HC            0.05509    33
-   H13   HC            0.03959    34
-   H14   HC            0.03959    35
-   H15   HC            0.04059    36
-   H16   HC            0.04059    37
-   H18   HC            0.04059    38
-   H19   HC            0.04059    39
-   H20   HC            0.04009    40
-   H21   HC            0.04009    41
-   H23   HC            0.04009    42
-   H24   HC            0.04009    43
-   H25   HC            0.03359    44
-   H26   HC            0.03359    45
-   H27   HC            0.03359    46
+   HC1   HC            0.07809    24
+   HC2   HC            0.07809    25
+   HD1   HC            0.05709    26
+   HD2   HC            0.05709    27
+   HE1   HC            0.04759    28
+   HE2   HC            0.04759    29
+   HF1   HC            0.04009    30
+   HF2   HC            0.04009    31
+   HG1   HC            0.05509    32
+   HG2   HC            0.05509    33
+   HH1   HC            0.03959    34
+   HH2   HC            0.03959    35
+   HI1   HC            0.04059    36
+   HI2   HC            0.04059    37
+   HJ1   HC            0.04059    38
+   HJ2   HC            0.04059    39
+   HK1   HC            0.04009    40
+   HK2   HC            0.04009    41
+   HL1   HC            0.04009    42
+   HL2   HC            0.04009    43
+   HM1   HC            0.03359    44
+   HM2   HC            0.03359    45
+   HM3   HC            0.03359    46
  
  [ bonds ]
      N     H
@@ -3462,38 +3694,413 @@
     C1    O1
     C1    C2
     C2    C3
-    C2    H1
-    C2    H2
-    C3    H3
-    C3    H4
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
     C3    C4
-    C4    H5
-    C4    H6
+    C4   HE1
+    C4   HE2
     C4    C5
-    C5    H8
-    C5    H9
+    C5   HF1
+    C5   HF2
     C5    C6
-    C6   H10
-    C6   H11
+    C6   HG1
+    C6   HG2
     C6    C7
-    C7   H13
-    C7   H14
+    C7   HH1
+    C7   HH2
     C7    C8                
-    C8   H15
-    C8   H16
+    C8   HI1
+    C8   HI2
     C8    C9
-    C9   H18
-    C9   H19
+    C9   HJ1
+    C9   HJ2
     C9   C10
-   C10   H20
-   C10   H21
+   C10   HK1
+   C10   HK2
    C10   C11
-   C11   H23
-   C11   H24
+   C11   HL1
+   C11   HL2
    C11   C12
-   C12   H25
-   C12   H26
-   C12   H27          
+   C12   HM1
+   C12   HM2
+   C12   HM3          
+    -C     N
+
+ [ impropers ]
+    -C    CA     N     H
+    CA    +N     C     O
+
+[ CYE ]
+ [ atoms]
+     N    N           -0.59532     1
+     H    H            0.33108     2
+    CA   CX            0.04828     3
+    HA   H1            0.10428     4
+    CB   CT           -0.04772     5
+   HB1   H1            0.10428     6
+   HB2   H1            0.10428     7
+     C    C            0.63668     8
+     O    O           -0.60552     9
+     S    S           -0.23912    10
+    C1    C            0.58728    11
+    O1    O           -0.53952    12
+    C2   CT           -0.16582    13
+    C3   CT           -0.07182    14
+    C4   CT           -0.08382    15
+    C5   CT           -0.06982    16
+    C6   CT           -0.08482    17
+    C7   CT           -0.07582    18
+    C8   CT           -0.07782    19
+    C9   CT           -0.07682    20
+   C10   CT           -0.07582    21
+   C11   CT           -0.07582    22
+   C12   CT           -0.07682    23
+   C13   CT           -0.07882    24
+   C14   CT           -0.09152    25
+   HC1   HC            0.07778    26
+   HC2   HC            0.07778    27
+   HD1   HC            0.05678    28
+   HD2   HC            0.05678    29
+   HE1   HC            0.04778    30
+   HE2   HC            0.04778    31
+   HF1   HC            0.03978    32
+   HF2   HC            0.03978    33
+   HG1   HC            0.05478    34
+   HG2   HC            0.05478    35
+   HH1   HC            0.03928    36
+   HH2   HC            0.03928    37
+   HI1   HC            0.04028    38
+   HI2   HC            0.04028    39
+   HJ1   HC            0.04028    40
+   HJ2   HC            0.04028    41
+   HK1   HC            0.04078    42
+   HK2   HC            0.04078    43
+   HL1   HC            0.04028    44
+   HL2   HC            0.04028    45
+   HM1   HC            0.04028    46
+   HM2   HC            0.04028    47
+   HN1   HC            0.04028    48
+   HN2   HC            0.04028    49
+   HO1   HC            0.03328    50
+   HO2   HC            0.03328    51
+   HO3   HC            0.03328    52
+ 
+ [ bonds ]
+     N     H
+     N    CA
+    CA    HA
+    CA     C
+     C     O
+    CA    CB
+    CB   HB1
+    CB   HB2
+    CB     S
+     S    C1
+    C1    O1
+    C1    C2
+    C2    C3
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
+    C3    C4
+    C4   HE1
+    C4   HE2
+    C4    C5
+    C5   HF1
+    C5   HF2
+    C5    C6
+    C6   HG1
+    C6   HG2
+    C6    C7
+    C7   HH1
+    C7   HH2
+    C7    C8                
+    C8   HI1
+    C8   HI2
+    C8    C9
+    C9   HJ1
+    C9   HJ2
+    C9   C10
+   C10   HK1
+   C10   HK2
+   C10   C11
+   C11   HL1
+   C11   HL2
+   C11   C12
+   C12   HM1
+   C12   HM2
+   C12   C13
+   C13   HN1
+   C13   HN2
+   C13   C14
+   C14   HO1
+   C14   HO2
+   C14   HO3
+    -C     N
+
+ [ impropers ]
+    -C    CA     N     H
+    CA    +N     C     O
+
+[ CYF ]
+ [ atoms]
+     N    N            -0.5954      1
+     H    H              0.331      2
+    CA   CX             0.0482      3
+    HA   H1             0.1002      4
+    CB   CT            -0.0488      5
+   HB1   H1             0.1042      6
+   HB2   H1             0.1042      7
+     C    C             0.6366      8
+     O    O            -0.6056      9
+     S    S            -0.2392     10
+    C1    C             0.5872     11
+    O1    O            -0.5396     12
+    C2   CT            -0.1659     13
+    C3   CT            -0.0719     14
+    C4   CT            -0.0839     15
+    C5   CT            -0.0699     16
+    C6   CT            -0.0849     17
+    C7   CT            -0.0759     18
+    C8   CT            -0.0779     19
+    C9   CT            -0.0769     20
+   C10   CT            -0.0759     21
+   C11   CT            -0.0759     22
+   C12   CT            -0.0769     23
+   C13   CT            -0.0779     24
+   C14   CT            -0.0769     25
+   C15   CT            -0.0779     26
+   C16   CT            -0.0906     27
+   HC1   HC             0.0777     28
+   HC2   HC             0.0777     29
+   HD1   HC             0.0567     30
+   HD2   HC             0.0567     31
+   HE1   HC             0.0472     32
+   HE2   HC             0.0472     33
+   HF1   HC             0.0397     34
+   HF2   HC             0.0397     35
+   HG1   HC             0.0547     36
+   HG2   HC             0.0547     37
+   HH1   HC             0.0392     38
+   HH2   HC             0.0392     39
+   HI1   HC             0.0402     40
+   HI2   HC             0.0402     41
+   HJ1   HC             0.0402     42
+   HJ2   HC             0.0402     43
+   HK1   HC             0.0407     44
+   HK2   HC             0.0407     45
+   HL1   HC             0.0402     46
+   HL2   HC             0.0402     47
+   HM1   HC             0.0397     48
+   HM2   HC             0.0397     49
+   HN1   HC             0.0417     50
+   HN2   HC             0.0417     51
+   HO1   HC             0.0397     52
+   HO2   HC             0.0397     53
+   HP1   HC             0.0397     54
+   HP1   HC             0.0397     55
+   HQ1   HC            0.03387     56
+   HQ1   HC            0.03387     57
+   HQ3   HC            0.03387     58
+ 
+ [ bonds ]
+     N     H
+     N    CA
+    CA    HA
+    CA     C
+     C     O
+    CA    CB
+    CB   HB1
+    CB   HB2
+    CB     S
+     S    C1
+    C1    O1
+    C1    C2
+    C2    C3
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
+    C3    C4
+    C4   HE1
+    C4   HE2
+    C4    C5
+    C5   HF1
+    C5   HF2
+    C5    C6
+    C6   HG1
+    C6   HG2
+    C6    C7
+    C7   HH1
+    C7   HH2
+    C7    C8                
+    C8   HI1
+    C8   HI2
+    C8    C9
+    C9   HJ1
+    C9   HJ2
+    C9   C10
+   C10   HK1
+   C10   HK2
+   C10   C11
+   C11   HL1
+   C11   HL2
+   C11   C12
+   C12   HM1
+   C12   HM2
+   C12   C13
+   C13   HN1
+   C13   HN2
+   C13   C14
+   C14   HO1
+   C14   HO2
+   C14   C15
+   C15   HP1
+   C15   HP2
+   C15   C16
+   C16   HQ1
+   C16   HQ2
+   C16   HQ3
+    -C     N
+
+ [ impropers ]
+    -C    CA     N     H
+    CA    +N     C     O
+
+[ CYG ]
+ [ atoms]
+     N    N           -0.59553      1
+     H    H            0.33087      2
+    CA   CX            0.04807      3
+    HA   H1            0.10007      4
+    CB   CT           -0.04893      5
+   HB1   H1            0.10407      6
+   HB2   H1            0.10407      7
+     C    C            0.63647      8
+     O    O           -0.60573      9
+     S    S           -0.23933     10
+    C1    C            0.58707     11
+    O1    O           -0.53973     12
+    C2   CT           -0.16603     13
+    C3   CT           -0.07203     14
+    C4   CT           -0.08403     15
+    C5   CT           -0.07003     16
+    C6   CT           -0.08503     17
+    C7   CT           -0.07603     18
+    C8   CT           -0.07803     19
+    C9   CT           -0.07703     20
+   C10   CT           -0.07703     21
+   C11   CT           -0.07603     22
+   C12   CT           -0.07703     23
+   C13   CT           -0.07803     24
+   C14   CT           -0.07703     25
+   C15   CT           -0.07703     26
+   C16   CT           -0.07803     27
+   C17   CT           -0.07903     28
+   C18   CT           -0.09073     29
+   HC1   HC            0.07757     30
+   HC2   HC            0.07757     31
+   HD1   HC            0.05657     32
+   HD2   HC            0.05657     33
+   HE1   HC            0.04707     34
+   HE2   HC            0.04707     35
+   HF1   HC            0.03957     36
+   HF2   HC            0.03957     37
+   HG1   HC            0.05457     38
+   HG2   HC            0.05457     39
+   HH1   HC            0.03907     40
+   HH2   HC            0.03907     41
+   HI1   HC            0.04007     42
+   HI2   HC            0.04007     43
+   HJ1   HC            0.04007     44
+   HJ2   HC            0.04007     45
+   HK1   HC            0.04057     46
+   HK2   HC            0.04057     47
+   HL1   HC            0.04007     48
+   HL2   HC            0.04007     49
+   HM1   HC            0.03957     50
+   HM2   HC            0.03957     51
+   HN1   HC            0.04157     52
+   HN2   HC            0.04157     53
+   HO1   HC            0.04007     54
+   HO2   HC            0.04007     55
+   HP1   HC            0.04057     56
+   HP1   HC            0.04057     57
+   HQ1   HC            0.04107     58
+   HQ1   HC            0.04107     59
+   HR1   HC            0.03957     60
+   HR1   HC            0.03957     61
+   HS1   HC            0.03374     62
+   HS1   HC            0.03374     63
+   HS3   HC            0.03374     64
+ 
+ [ bonds ]
+     N     H
+     N    CA
+    CA    HA
+    CA     C
+     C     O
+    CA    CB
+    CB   HB1
+    CB   HB2
+    CB     S
+     S    C1
+    C1    O1
+    C1    C2
+    C2    C3
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
+    C3    C4
+    C4   HE1
+    C4   HE2
+    C4    C5
+    C5   HF1
+    C5   HF2
+    C5    C6
+    C6   HG1
+    C6   HG2
+    C6    C7
+    C7   HH1
+    C7   HH2
+    C7    C8                
+    C8   HI1
+    C8   HI2
+    C8    C9
+    C9   HJ1
+    C9   HJ2
+    C9   C10
+   C10   HK1
+   C10   HK2
+   C10   C11
+   C11   HL1
+   C11   HL2
+   C11   C12
+   C12   HM1
+   C12   HM2
+   C12   C13
+   C13   HN1
+   C13   HN2
+   C13   C14
+   C14   HO1
+   C14   HO2
+   C14   C15
+   C15   HP1
+   C15   HP2
+   C15   C16
+   C16   HQ1
+   C16   HQ2
+   C16   C17
+   C17   HR1
+   C17   HR2
+   C17   C18
+   C18   HS1
+   C18   HS2
+   C18   HS3
     -C     N
 
  [ impropers ]
