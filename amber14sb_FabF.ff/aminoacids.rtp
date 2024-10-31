@@ -3400,7 +3400,60 @@
     CA    +N     C     O
 
 ; CYS w/ attached acyl chain
-[ CYA ]
+[ CYZ ] ; C2
+ [ atoms]
+     N    N           -0.59469     1
+     H    H            0.33271     2
+    CA   CX            0.04991     3
+    HA   H1            0.10191     4
+    CB   CT           -0.04609     5
+   HB1   H1            0.10591     6
+   HB2   H1            0.10591     7
+     C    C            0.63831     8
+     O    O           -0.60389     9
+     S    S           -0.23649    10
+    C1    C            0.58891    11
+    O1    O           -0.53789    12
+    C2   CT           -0.16419    13
+    C3   CT           -0.07019    14
+    C4   CT           -0.09689    15
+   HC1   HC            0.07941    16
+   HC2   HC            0.07941    17
+   HD1   HC            0.05841    18
+   HD2   HC            0.05841    19
+   HE1   HC            0.04258    20
+   HE2   HC            0.04258    21
+   HE3   HC            0.04258    22
+ 
+ [ bonds ]
+     N     H
+     N    CA
+    CA    HA
+    CA     C
+     C     O
+    CA    CB
+    CB   HB1
+    CB   HB2
+    CB     S
+     S    C1
+    C1    O1
+    C1    C2
+    C2    C3
+    C2   HC1
+    C2   HC2
+    C3   HD1
+    C3   HD2
+    C3    C4
+    C4   HE1
+    C4   HE2
+    C4   HE3          
+    -C     N
+
+ [ impropers ]
+    -C    CA     N     H
+    CA    +N     C     O
+
+[ CYA ] ; C4
  [ atoms]
      N    N           -0.59469     1
      H    H            0.33271     2
@@ -3465,7 +3518,7 @@
     -C    CA     N     H
     CA    +N     C     O
 
-[ CYB ]
+[ CYB ] ; C6
  [ atoms]
      N    N           -0.59431     1
      H    H            0.33209     2
@@ -3542,7 +3595,7 @@
     -C    CA     N     H
     CA    +N     C     O
 
-[ CYC ]
+[ CYC ] ; C8
  [ atoms]
      N    N           -0.59472     1
      H    H            0.33168     2
@@ -3631,7 +3684,7 @@
     -C    CA     N     H
     CA    +N     C     O
 
-[ CYD ]
+[ CYD ] ; C10
  [ atoms]
      N    N           -0.59501     1
      H    H            0.33139     2
@@ -3732,7 +3785,7 @@
     -C    CA     N     H
     CA    +N     C     O
 
-[ CYE ]
+[ CYE ] ; C12
  [ atoms]
      N    N           -0.59532     1
      H    H            0.33108     2
@@ -3845,7 +3898,7 @@
     -C    CA     N     H
     CA    +N     C     O
 
-[ CYF ]
+[ CYF ] ; C14
  [ atoms]
      N    N            -0.5954      1
      H    H              0.331      2
@@ -3901,9 +3954,9 @@
    HO1   HC             0.0397     52
    HO2   HC             0.0397     53
    HP1   HC             0.0397     54
-   HP1   HC             0.0397     55
+   HP2   HC             0.0397     55
    HQ1   HC            0.03387     56
-   HQ1   HC            0.03387     57
+   HQ2   HC            0.03387     57
    HQ3   HC            0.03387     58
  
  [ bonds ]
@@ -3970,7 +4023,7 @@
     -C    CA     N     H
     CA    +N     C     O
 
-[ CYG ]
+[ CYG ] ; C16
  [ atoms]
      N    N           -0.59553      1
      H    H            0.33087      2
@@ -4028,13 +4081,13 @@
    HO1   HC            0.04007     54
    HO2   HC            0.04007     55
    HP1   HC            0.04057     56
-   HP1   HC            0.04057     57
+   HP2   HC            0.04057     57
    HQ1   HC            0.04107     58
-   HQ1   HC            0.04107     59
+   HQ2   HC            0.04107     59
    HR1   HC            0.03957     60
-   HR1   HC            0.03957     61
+   HR2   HC            0.03957     61
    HS1   HC            0.03374     62
-   HS1   HC            0.03374     63
+   HS2   HC            0.03374     63
    HS3   HC            0.03374     64
  
  [ bonds ]
