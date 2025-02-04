@@ -4212,7 +4212,7 @@
    HB2    H1           0.11120     7
      C    C            0.59730     8
      O    O           -0.56790     9
-    SG    SH          -0.31190    10
+     S    SH          -0.31190    10
     HG    HS           0.19330    11     
    DC1    DUM_C        0.00000    12
    DO1    DUM_O        0.00000    13
@@ -4229,9 +4229,9 @@
     CA     C
     CB   HB1
     CB   HB2
-    CB    SG
-    SG    HG
-    SG   DC1
+    CB     S
+     S    HG
+     S   DC1
      C     O
    DC1   DO1
    DC1   DC2
@@ -4327,10 +4327,10 @@
    HE2   HC            0.04654     23
    HE3   HC            0.04654     24
   HVF1   DUM_HC        0.00000     25
-  HVF2   DUM_HC        0.00000     25
-  HVG1   DUM_HC        0.00000     25
-  HVG2   DUM_HC        0.00000     25
-  HVG3   DUM_HC        0.00000     25
+  HVF2   DUM_HC        0.00000     26
+  HVG1   DUM_HC        0.00000     27
+  HVG2   DUM_HC        0.00000     28
+  HVG3   DUM_HC        0.00000     29
  
  [ bonds ]
      N     H
@@ -4399,11 +4399,11 @@
    HG1   HC            0.04258    28
    HG2   HC            0.04258    29
    HG3   HC            0.04258    30
-  HVH1   HC            0.00000    31
-  HVH2   HC            0.00000    31
-  HVI1   HC            0.00000    31
-  HVI2   HC            0.00000    31
-  HVI3   HC            0.00000    31
+  HVH1   DUM_HC        0.00000    31
+  HVH2   DUM_HC        0.00000    32
+  HVI1   DUM_HC        0.00000    33
+  HVI2   DUM_HC        0.00000    34
+  HVI3   DUM_HC        0.00000    35
 
  
  [ bonds ]
@@ -4434,7 +4434,7 @@
     C6   HG1
     C6   HG2
     C6   HG3     
-    C6    DC7
+    C6   DC7
    DC7  HVH1
    DC7  HVH2
    DC7   DC8                
