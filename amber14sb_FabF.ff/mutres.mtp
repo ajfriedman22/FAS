@@ -1034,3 +1034,397 @@
  [ dihedrals ]
 
  [ rotations ]
+
+[ I2J ] ; C2 -> C4
+ [ morphes ]
+     N          N ->      N          N
+     H          H ->      H          H
+    CA         CX ->     CA         CX
+    HA         H1 ->     HA         H1
+    CB         CT ->     CB         2C
+   HB1         H1 ->    HB1         H1
+   HB2         H1 ->    HB2         H1
+     C          C ->      C          C
+     O          O ->      O          O
+    O1         OS ->     O1         OS
+     P          P ->      P          P
+    O2         O2 ->     O2         O2
+    O3         O2 ->     O3         O2
+    O4         OS ->     O4         OS
+    C1         CT ->     C1         CT
+    C2         CT ->     C2         CT
+    C3         CT ->     C3         CT
+    C4         CT ->     C4         CT
+    C5         CT ->     C5         CT
+    O5         OH ->     O5         OH
+    C6          C ->     C6          C
+    O6          O ->     O6          O
+    N1          N ->     N1          N
+    C7         CT ->     C7         CT
+    C8         CT ->     C8         CT
+    C9          C ->     C9          C
+    O7          O ->     O7          O
+    N2          N ->     N2          N
+   C10         CT ->    C10         CT
+   C11         CT ->    C11         CT
+     S          S ->      S          S
+   C12         CT ->    C12         CT
+    O8          O ->     O8          O        
+   C13         CT ->    C13         CT
+   C14     DUM_CT ->    C14         CT
+   C15     DUM_CT ->    C15         CT
+    HA         H1 ->     HA         H1
+   HB1         HC ->    HB1         HC
+   HB2         HC ->    HB2         HC      
+   HC1         HC ->    HC1         HC
+   HC2         HC ->    HC2         HC   
+   HD1         HC ->    HD1         HC
+   HD2         HC ->    HD2         HC
+   HD3         HC ->    HD3         HC
+   HE1         HC ->    HE1         HC
+   HE2         HC ->    HE2         HC
+   HE3         HC ->    HE3         HC      
+    HF          H ->     HF          H
+    HG         HO ->     HG         HO
+    HH          H ->     HH          H
+   HI1         HC ->    HI1         HC
+   HI2         HC ->    HI2         HC
+   HJ1         HC ->    HJ1         HC
+   HJ2         HC ->    HJ2         HC
+    HK          H ->     HK          H
+   HL1         HC ->    HL1         HC
+   HL2         HC ->    HL2         HC
+   HM1         HC ->    HM1         HC
+   HM2         HC ->    HM2         HC
+   HN1         HC ->    HN1         HC
+   HN2         HC ->    HN2         HC
+   HN3         HC ->    HN3     DUM_HC   
+   HO1     DUM_HC ->    HO1         HC
+   HO2     DUM_HC ->    HO2         HC
+   HP1     DUM_HC ->    HP1         HC
+   HP2     DUM_HC ->    HP2         HC
+   HP3     DUM_HC ->    HP3         HC   
+
+ [ atoms ]
+       N          N   -0.56902      1      14.01          N   -0.56936      14.01
+       H          H    0.30238      1      1.008          H    0.30204      1.008
+      CA         CT    0.01758      1      12.01         CT    0.01724      12.01
+      CB         CT    0.17428      1      12.01         CT    0.17394      12.01
+       C          C    0.62398      1      12.01          C    0.62364      12.01
+       O          O   -0.63422      1       16.0          O   -0.63456       16.0
+      O1         OS   -0.57932      1       16.0         OS   -0.58066       16.0
+       P          P    1.43068      1       16.0          P    1.43234       16.0
+      O2         O2   -0.81262      1       16.0         O2   -0.81446       16.0
+      O3         O2   -0.81262      1       16.0         O2   -0.81446       16.0
+      O4         OS   -0.59132      1       16.0         OS   -0.58966       16.0
+      C1         CT    0.20428      1      12.01         CT    0.20694      12.01
+      C2         CT   -0.09812      1      12.01         CT   -0.10146      12.01
+      C3         CT   -0.08272      1      12.01         CT   -0.08256      12.01
+      C4         CT   -0.08272      1      12.01         CT   -0.08256      12.01
+      C5         CT    0.10898      1      12.01         CT    0.10864      12.01
+      O5         OH   -0.63992      1      1.008         OH   -0.63626      1.008
+      C6          C    0.66898      1      12.01          C    0.67164      12.01
+      O6          O   -0.67222      1       16.0          O   -0.66556       16.0
+      N1          N   -0.54802      1      14.01          N   -0.56336      14.01
+      C7         CT    0.08488      1      12.01         CT    0.10754      12.01
+      C8         CT   -0.18152      1      12.01         CT   -0.17086      12.01
+      C9          C    0.65998      1      12.01          C    0.66264      12.01
+      O7          O   -0.63422      1       16.0          O   -0.64256       16.0
+      N2          N   -0.55902      1      14.01          N   -0.56936      14.01
+     C10         CT    0.09988      1      12.01         CT    0.10754      12.01
+     C11         CT   -0.04642      1      12.01         CT   -0.04076      12.01
+       S          S   -0.28682      1      32.06          S   -0.28516      32.06
+     C12          C    0.60958      1      12.01          C    0.60124      12.01
+      O8          O   -0.54422      1       16.0          O   -0.53056       16.0
+     C13         CT   -0.19522      1      12.01         CT   -0.16086      12.01
+     C14     DUM_CT    0.00000      1      12.01         CT   -0.08186      12.01
+     C15     DUM_CT    0.00000      1      12.01         CT   -0.09856      12.01
+      HA         H1    0.07558      1      1.008         H1    0.07524      1.008
+     HB1         HC    0.05908      1      1.008         HC    0.05974      1.008
+     HB2         HC    0.05908      1      1.008         HC    0.05974      1.008
+     HC1         HC    0.02858      1      1.008         HC    0.02674      1.008
+     HC2         HC    0.02858      1      1.008         HC    0.02674      1.008
+     HD1         HC    0.03858      1      1.008         HC    0.03791      1.008
+     HD2         HC    0.03858      1      1.008         HC    0.03791      1.008
+     HD3         HC    0.03858      1      1.008         HC    0.03791      1.008
+     HE1         HC    0.03858      1      1.008         HC    0.03791      1.008
+     HE2         HC    0.03858      1      1.008         HC    0.03791      1.008
+     HE3         HC    0.03858      1      1.008         HC    0.03791      1.008
+      HF          H    0.08458      1      1.008         HC    0.09124      1.008
+      HG         HO    0.48188      1      1.008         HO    0.47754      1.008
+      HH          H    0.33038      1      1.008          H    0.33604      1.008
+     HI1         HC    0.07108      1      1.008         HC    0.05424      1.008
+     HI2         HC    0.07108      1      1.008         HC    0.05424      1.008
+     HJ1         HC    0.07958      1      1.008         HC    0.07824      1.008
+     HJ2         HC    0.07958      1      1.008         HC    0.07824      1.008
+      HK          H    0.34738      1      1.008          H    0.35804      1.008
+     HL1         HC    0.06808      1      1.008         HC    0.06124      1.008
+     HL2         HC    0.06808      1      1.008         HC    0.06124      1.008
+     HM1         HC    0.08908      1      1.008         HC    0.08724      1.008
+     HM2         HC    0.08908      1      1.008         HC    0.08724      1.008
+     HN1         HC    0.08091      1      1.008         HC    0.06824      1.008
+     HN2         HC    0.08091      1      1.008         HC    0.06824      1.008
+     HN2         HC    0.08091      1      1.008     DUM_HC    0.00000      1.008
+     HO1     DUM_HC    0.00000      1      1.008         HC    0.07024      1.008
+     HO2     DUM_HC    0.00000      1      1.008         HC    0.07024      1.008     
+     HP1     DUM_HC    0.00000      1      1.008         HC    0.04091      1.008     
+     HP2     DUM_HC    0.00000      1      1.008         HC    0.04091      1.008
+     HP3     DUM_HC    0.00000      1      1.008         HC    0.04091      1.008
+
+ [ coords ]
+   3.835   -0.663   8.107
+   3.832   -0.691   8.011
+   3.882   -0.531   8.146
+   3.968   -0.460   8.043
+   3.767   -0.444   8.197
+   3.789   -0.360   8.285
+   3.928   -0.474   7.908
+   4.067   -0.405   7.842
+   4.163   -0.306   7.909
+   4.146   -0.461   7.724
+   3.941   -0.321   7.781
+   3.962   -0.194   7.712
+   3.899   -0.196   7.571
+   3.746   -0.200   7.586
+   3.937   -0.066   7.499
+   3.959   -0.319   7.495
+   3.902   -0.440   7.543
+   3.949   -0.328   7.343
+   4.036   -0.389   7.281
+   3.842   -0.274   7.284
+   3.813   -0.288   7.142
+   3.668   -0.320   7.120
+   3.634   -0.377   6.984
+   3.573   -0.484   6.972
+   3.661   -0.298   6.880
+   3.594   -0.308   6.751
+   3.451   -0.262   6.758
+   3.423   -0.118   6.756
+   3.295   -0.078   6.762
+   3.205   -0.157   6.755
+   3.257    0.067   6.776
+   3.337    0.142   6.883
+   3.358    0.065   7.014
+   3.944   -0.552   8.221
+   4.062   -0.495   8.049
+   3.969   -0.361   8.063
+   4.060   -0.178   7.705
+   3.920   -0.122   7.767
+   3.704   -0.202   7.495
+   3.719   -0.282   7.637
+   3.716   -0.118   7.635
+   3.897   -0.066   7.407
+   3.901    0.012   7.551
+   4.036   -0.059   7.492
+   4.057   -0.315   7.516
+   3.883   -0.529   7.585
+   3.779   -0.221   7.340
+   3.870   -0.362   7.105
+   3.836   -0.202   7.096
+   3.615   -0.236   7.131
+   3.640   -0.387   7.189
+   3.731   -0.228   6.891
+   3.598   -0.403   6.721
+   3.644   -0.251   6.686
+   3.412   -0.297   6.843
+   3.402   -0.301   6.680
+   3.160    0.071   6.799
+   3.272    0.111   6.688
+   3.293    0.118   6.698
+   3.287    0.227   6.905
+   3.426    0.165   6.846
+   3.410    0.121   7.078
+   3.269    0.042   7.055
+   3.408   -0.020   6.995
+
+ [ impropers ]
+     -C     CA      N      H     default-A                 default-B                  
+     CA     +N      C      O     default-A                 default-B                  
+
+ [ dihedrals ]
+
+ [ rotations ]
+
+[ J2K ] ; C4 -> C6
+ [ morphes ]
+     N          N ->      N          N
+     H          H ->      H          H
+    CA         CX ->     CA         CX
+    HA         H1 ->     HA         H1
+    CB         CT ->     CB         2C
+   HB1         H1 ->    HB1         H1
+   HB2         H1 ->    HB2         H1
+     C          C ->      C          C
+     O          O ->      O          O
+    O1         OS ->     O1         OS
+     P          P ->      P          P
+    O2         O2 ->     O2         O2
+    O3         O2 ->     O3         O2
+    O4         OS ->     O4         OS
+    C1         CT ->     C1         CT
+    C2         CT ->     C2         CT
+    C3         CT ->     C3         CT
+    C4         CT ->     C4         CT
+    C5         CT ->     C5         CT
+    O5         OH ->     O5         OH
+    C6          C ->     C6          C
+    O6          O ->     O6          O
+    N1          N ->     N1          N
+    C7         CT ->     C7         CT
+    C8         CT ->     C8         CT
+    C9          C ->     C9          C
+    O7          O ->     O7          O
+    N2          N ->     N2          N
+   C10         CT ->    C10         CT
+   C11         CT ->    C11         CT
+     S          S ->      S          S
+   C12         CT ->    C12         CT
+    O8          O ->     O8          O        
+   C13         CT ->    C13         CT
+   C14         CT ->    C14         CT
+   C15         CT ->    C15         CT      
+   C16     DUM_CT ->    C16         CT
+   C17     DUM_CT ->    C17         CT
+    HA         H1 ->     HA         H1
+   HB1         HC ->    HB1         HC
+   HB2         HC ->    HB2         HC      
+   HC1         HC ->    HC1         HC
+   HC2         HC ->    HC2         HC   
+   HD1         HC ->    HD1         HC
+   HD2         HC ->    HD2         HC
+   HD3         HC ->    HD3         HC
+   HE1         HC ->    HE1         HC
+   HE2         HC ->    HE2         HC
+   HE3         HC ->    HE3         HC      
+    HF         HC ->     HF         HC
+    HG         HC ->     HG         HC
+    HH         HC ->     HH         HC
+   HI1         HC ->    HI1         HC
+   HI2         HC ->    HI2         HC
+   HJ1         HC ->    HJ1         HC
+   HJ2         HC ->    HJ2         HC
+    HK         HC ->     HK         HC
+   HL1         HC ->    HL1         HC
+   HL2         HC ->    HL2         HC
+   HM1         HC ->    HM1         HC
+   HM2         HC ->    HM2         HC
+   HN1         HC ->    HN1         HC
+   HN2         HC ->    HN2         HC
+   HO1         HC ->    HO1         HC
+   HO2         HC ->    HO2         HC
+   HP1         HC ->    HP1         HC
+   HP2         HC ->    HP2         HC      
+   HP3         HC ->    HP3     DUM_HC   
+   HQ1     DUM_HC ->    HQ1         HC
+   HQ2     DUM_HC ->    HQ2         HC
+   HR1     DUM_HC ->    HR1         HC
+   HR2     DUM_HC ->    HR2         HC
+   HR3     DUM_HC ->    HR3         HC   
+
+ [ atoms ]
+       N          N   -0.56902      1      14.01          N   -0.56936      14.01
+
+
+ [ coords ]
+   3.835   -0.663   8.107
+
+
+ [ impropers ]
+     -C     CA      N      H     default-A                 default-B                  
+     CA     +N      C      O     default-A                 default-B                  
+
+ [ dihedrals ]
+
+ [ rotations ]
+
+[ K2L ] ; C6 -> C8
+ [ morphes ]
+     N          N ->      N          N
+     H          H ->      H          H
+    CA         CX ->     CA         CX
+    HA         H1 ->     HA         H1
+    CB         CT ->     CB         2C
+   HB1         H1 ->    HB1         H1
+   HB2         H1 ->    HB2         H1
+     C          C ->      C          C
+     O          O ->      O          O
+    O1         OS ->     O1         OS
+     P          P ->      P          P
+    O2         O2 ->     O2         O2
+    O3         O2 ->     O3         O2
+    O4         OS ->     O4         OS
+    C1         CT ->     C1         CT
+    C2         CT ->     C2         CT
+    C3         CT ->     C3         CT
+    C4         CT ->     C4         CT
+    C5         CT ->     C5         CT
+    O5         OH ->     O5         OH
+    C6          C ->     C6          C
+    O6          O ->     O6          O
+    N1          N ->     N1          N
+    C7         CT ->     C7         CT
+    C8         CT ->     C8         CT
+    C9          C ->     C9          C
+    O7          O ->     O7          O
+    N2          N ->     N2          N
+   C10         CT ->    C10         CT
+   C11         CT ->    C11         CT
+     S          S ->      S          S
+   C12         CT ->    C12         CT
+    O8          O ->     O8          O        
+   C13         CT ->    C13         CT
+   C14         CT ->    C14         CT
+   C15         CT ->    C15         CT      
+   C16     DUM_CT ->    C16         CT
+   C17     DUM_CT ->    C17         CT
+    HA         H1 ->     HA         H1
+   HB1         HC ->    HB1         HC
+   HB2         HC ->    HB2         HC      
+   HC1         HC ->    HC1         HC
+   HC2         HC ->    HC2         HC   
+   HD1         HC ->    HD1         HC
+   HD2         HC ->    HD2         HC
+   HD3         HC ->    HD3         HC
+   HE1         HC ->    HE1         HC
+   HE2         HC ->    HE2         HC
+   HE3         HC ->    HE3         HC      
+    HF         HC ->     HF         HC
+    HG         HC ->     HG         HC
+    HH         HC ->     HH         HC
+   HI1         HC ->    HI1         HC
+   HI2         HC ->    HI2         HC
+   HJ1         HC ->    HJ1         HC
+   HJ2         HC ->    HJ2         HC
+    HK         HC ->     HK         HC
+   HL1         HC ->    HL1         HC
+   HL2         HC ->    HL2         HC
+   HM1         HC ->    HM1         HC
+   HM2         HC ->    HM2         HC
+   HN1         HC ->    HN1         HC
+   HN2         HC ->    HN2         HC
+   HO1         HC ->    HO1         HC
+   HO2         HC ->    HO2         HC
+   HP1         HC ->    HP1         HC
+   HP2         HC ->    HP2         HC      
+   HP3         HC ->    HP3     DUM_HC   
+   HQ1     DUM_HC ->    HQ1         HC
+   HQ2     DUM_HC ->    HQ2         HC
+   HR1     DUM_HC ->    HR1         HC
+   HR2     DUM_HC ->    HR2         HC
+   HR3     DUM_HC ->    HR3         HC   
+
+ [ atoms ]
+       N          N   -0.56902      1      14.01          N   -0.56936      14.01
+
+
+ [ coords ]
+   3.835   -0.663   8.107
+
+
+ [ impropers ]
+     -C     CA      N      H     default-A                 default-B                  
+     CA     +N      C      O     default-A                 default-B                  
+
+ [ dihedrals ]
+
+ [ rotations ]
