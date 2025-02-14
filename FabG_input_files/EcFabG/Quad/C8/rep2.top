@@ -1,0 +1,66 @@
+;
+;	File 'complex.top' was generated
+;	By user: unknown (776614)
+;	On host: c3cpu-c15-u32-3.rc.int.colorado.edu
+;	At date: Fri Jun 21 18:12:42 2024
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2021.5 (-:
+;	
+;	Executable:   /projects/anfr8476/pkgs/gromacs-2021-no-mpi/2021.5/bin/gmx
+;	Data prefix:  /projects/anfr8476/pkgs/gromacs-2021-no-mpi/2021.5
+;	Working dir:  /gpfs/alpine1/scratch/anfr8476/FabG/EColi/Trimer/Quad/C8/rep2/complex_top
+;	Command line:
+;	  gmx pdb2gmx -f complex.pdb -o complex.gro -p complex.top
+;	Force field data was read from:
+;	/projects/anfr8476/code/FAS/
+;
+;	Note:
+;	This might be a non-standard force field location. When you use this topology, the
+;	force field must either be present in the current directory, or the location
+;	specified in the GMXLIB path variable or with the 'include' mdp file option.
+;
+
+; Include forcefield parameters
+#include "amber14sb_FabG.ff/forcefield.itp"
+
+; Include chain topologies
+#include "complex_Protein.itp"
+#include "complex_Other2.itp"
+#include "complex_Protein3.itp"
+#include "complex_Protein4.itp"
+#include "complex_Other5.itp"
+#include "complex_Protein6.itp"
+#include "complex_Other7.itp"
+
+; Include water topology
+#include "amber14sb_FabG.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "amber14sb_FabG.ff/ions.itp"
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mols
+Protein             1
+Other2              1
+Protein3            1
+Protein4            1
+Other5              1
+Protein6            1
+Other7              1
+SOL         27810
+NA               108
+CL               88
