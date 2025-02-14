@@ -218,7 +218,10 @@
   c2 ha         1    0.10879   287106.1
   c2 h4         1    0.10868   288361.1
 DUM_HS SH       1    0.13360   229283.2
+  CT DUM_HC     1    0.10900   284512.0
 DUM_C  SH       1    0.18100   198321.6
+DUM_CT CT       1    0.15260   259408.0
+DUM_CT DUM_CT   1    0.15260   259408.0
 DUM_C  DUM_O    1    0.12290   476976.0
 DUM_C  DUM_CT   1    0.15220   265265.6
 DUM_CT DUM_HC   1    0.10900   284512.0
@@ -382,14 +385,18 @@ H1  CT  H1           1   109.500     292.880
 H1  CX  H1           1   109.500     292.880
 H1  CT  N*           1   109.500     418.400
 H1  CT  OH           1   109.500     418.400
+HC  CT  OH           1   109.500     418.400
 H1  CT  OS           1   109.500     418.400
+HC  CT  OS           1   109.500     418.400
 H1  CT  CM           1   109.500     418.400
 H1  CT  CS           1   109.500     418.400
 H1  CT  CY           1   110.000     418.400
 H1  CT  CZ           1   110.000     418.400
 H1  CT  N            1   109.500     418.400
+HC  CT  N            1   109.500     418.400
 H1  CX  N            1   109.500     418.400
 H1  CT  S            1   109.500     418.400
+HC  CT  S            1   109.500     418.400
 H1  CT  SH           1   109.500     418.400
 H1  CT  N2           1   109.500     418.400
 H1  CT  NT           1   109.500     418.400
@@ -439,6 +446,7 @@ CT  CX  HP           1   109.500     418.400
 CT  CT  N*           1   109.500     418.400
 CT  CT  OH           1   109.500     418.400
 CX  CT  OH           1   109.500     418.400
+C   CT  OH           1   109.500     418.400
 CT  CT  OS           1   109.500     418.400
 CT  CT  S            1   114.700     418.400
 CT  C   S            1   114.700     418.400
@@ -826,8 +834,17 @@ ce  c   o            1   123.200     575.718
 DUM_C  SH  2C        1    98.900     518.816
 HS  SH  DUM_C        1    96.000     359.824
 DUM_HS  S  C         1    96.000     359.824
-SH  DUM_C  DUM_O     1   109.500     418.400
-DUM_CT  DUM_C   SH   1   114.700     418.400
+SH  DUM_C  DUM_O     1   109.500       0.000
+C   CT  DUM_CT       1   111.100     527.184
+C   CT  DUM_HC       1   109.500     418.400
+CT  CT  DUM_HC       1   109.500     418.400
+CT  DUM_CT  DUM_HC   1   109.500       0.000
+DUM_CT  CT  HC       1   109.500       0.000
+DUM_CT  DUM_C   SH   1   114.700       0.000
+HC  CT DUM_HC        1   109.500       0.000
+CT  DUM_CT  DUM_CT   1   109.500       0.000
+CT  CT  DUM_CT       1   109.500     334.720
+CT  S   DUM_HS       1    96.000     359.824
 DUM_CT DUM_C  DUM_O  1   120.400     669.440
 DUM_C  DUM_CT DUM_HC 1   109.500     418.400
 DUM_HC DUM_CT DUM_HC 1   109.500     292.880
@@ -1712,10 +1729,23 @@ X   X   N   H        4      180.00     4.18400     2
  2C SH DUM_C DUM_O 9       180.0      0.00000     2
  2C SH DUM_C DUM_CT 9      180.0      0.00000     2 
  HS SH DUM_C DUM_CT 9      180.0      0.00000     2
- HS SH DUM_C DUM_O 9       180.0      0.00000     2 
+ HS SH DUM_C DUM_O 9       180.0      0.00000     2
+  C CT DUM_CT DUM_CT 9       0.0      0.00000     3
+ CT DUM_CT DUM_CT DUM_HC 9   0.0      0.00000     3  
+  C CT DUM_CT DUM_HC 9       0.0      0.00000     3  
+ HC CT DUM_CT DUM_CT 9       0.0      0.00000     3
+ HC CT DUM_CT DUM_HC 9       0.0      0.00000     3   
 DUM_HS S  C O      9       180.0      0.00000     2
 DUM_HS S  C CT     9       180.0      0.00000     2
  SH DUM_C DUM_CT DUM_HC 9  180.0      0.00000     2
 DUM_HC DUM_CT DUM_C DUM_O 9 180.0     0.33472     3
 DUM_HC DUM_CT DUM_C DUM_O 9  0.0      0.00000     2
-DUM_HC DUM_CT DUM_C DUM_O 9  0.0      3.34720     1 
+DUM_HC DUM_CT DUM_C DUM_O 9  0.0      3.34720     1
+DUM_HC  CT  C  O         9  180.0     0.00000     3
+DUM_HC  CT  C  O         9   0.0      0.00000     2
+DUM_HC  CT  C  O         9   0.0      0.00000     1 
+DUM_HC DUM_CT DUM_CT DUM_HC 9  0.0    0.62760     3
+ CT CT DUM_CT DUM_CT  9        0.0    0.00000     3
+ CT CT DUM_CT DUM_CT  9      180.0    0.00000     2
+ CT CT DUM_CT DUM_CT  9      180.0    0.00000     1
+DUM_HC DUM_CT CT CT   9        0.0    0.00000     3 

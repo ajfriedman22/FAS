@@ -89,7 +89,10 @@ ali = Alignment(env)
 ali.append_model(mdl1, atom_files=modelname, align_codes=modelname)
 
 #set up the mutate residue selection segment
-s = Selection(mdl1.chains[chain].residues[respos])
+if len(chain) != 1:
+    s = Selection(mdl1.residues[respos])
+else:
+    s = Selection(mdl1.chains[chain].residues[respos])
 
 #perform the mutate residue operation
 s.mutate(residue_type=restyp)
@@ -139,7 +142,10 @@ sched = autosched.loop.make_for_model(mdl1)
 #only optimize the selected residue (in first pass, just atoms in selected
 #residue, in second pass, include nonbonded neighboring atoms)
 #set up the mutate residue selection segment
-s = Selection(mdl1.chains[chain].residues[respos])
+if len(chain) != 1:
+    s = Selection(mdl1.residues[respos])
+else:
+    s = Selection(mdl1.chains[chain].residues[respos])
 
 mdl1.restraints.unpick_all()
 mdl1.restraints.pick(s)
