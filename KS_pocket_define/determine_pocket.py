@@ -138,6 +138,7 @@ class DeterminePocket:
             rmsd.append(np.sqrt(tot_square_dist/len(chain_atom_name)))
 
         return rmsd
+
 parser = argparse.ArgumentParser(description='This script runs pocket determination for FabB and FabF.')
 parser.add_argument('-y', '--yaml', type=str, default='params.yaml', help='The file path of the input YAML file that contains REXEE parameters. (Default: params.yaml)')
 
