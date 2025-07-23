@@ -6,6 +6,7 @@ import numpy as np
 import argparse
 from tqdm import tqdm
 import itertools
+import time
 
 class ParameterError(Exception):
     """Error raised when detecting improperly specified parameters in the YAML file."""
@@ -113,14 +114,14 @@ DI = DetermineInteractions(args.yaml)
 pockets_df = pd.read_csv(DI.pockets_input)
 cat_comp_per = np.zeros(len(DI.gro))
 cat_comp_per_by_pocket = np.zeros((len(DI.gro), 3))
-dist_df = pd.DataFrame()
+#dist_df = pd.DataFrame()
 inter_per_df = pd.DataFrame()
 inter_top_df = pd.DataFrame()
 
 for n in tqdm(range(len(DI.gro))):
     # Step 1: Load trajectory
     traj = md.load(f'{DI.file_path}/{DI.traj[n]}', top=f'{DI.file_path}/{DI.gro[n]}')
-    traj = traj[::20]
+    traj = traj[::5]
 
     # Step 2: Determine which frames are catalytically competant
     res1, res2 = DI.cat_define
@@ -140,7 +141,7 @@ for n in tqdm(range(len(DI.gro))):
     # Step 3: Determine which pockets to process
     name = DI.name[n]
     pocket_options = list(pockets_df[pockets_df['Name'] == name]['Pocket'].sort_values().unique())
-    pocket_list = pockets_df[pockets_df['Name'] == name]['Pocket'].to_list()[::20]
+    pocket_list = pockets_df[pockets_df['Name'] == name]['Pocket'].to_list()[::5]
     for pocket in DI.ignore_pockets:
         if pocket in pocket_options:
             pocket_options.remove(pocket)
@@ -176,36 +177,44 @@ for n in tqdm(range(len(DI.gro))):
         else:
             res2 = np.arange(set2[0], set2[1])
         res_pairs = list(itertools.product(res1, res2))
-
+        
         # Step 8: Compute contacts between all residue pairs
         dist, pairs = md.compute_contacts(traj_cat, contacts=res_pairs, scheme='closest-heavy', ignore_nonprotein=False, periodic=True)
-        for i in range(len(res_pairs)):
-            df = pd.DataFrame({'Name': name[n], 'Pocket': pocket, 'Interation Name': DI.interaction_name[d], 'Residue 1': pairs[i,0], 'Residue 2': pairs[i,1], 'Distance': dist[:,i], 'Pocket': pocket_cat})
-            dist_df = pd.concat([dist_df, df])
-        
+#        res1, res2, dist_all, pocket_cat_all = [],[],[],[]
+#        for i in range(len(res_pairs)):
+#            for x, y in zip(dist[:,i], pocket_cat):
+#                res1.append(pairs[i,0])
+#                res2.append(pairs[i,1])
+#                dist_all.append(x)
+#                pocket_cat_all.append(y)
+#        dist_df = pd.DataFrame({'Name': name[n], 'Pocket': pocket, 'Interation Name': DI.interaction_name[d], 'Residue 1': res1, 'Residue 2': res2, 'Distance': dist_all, 'Pocket': pocket_cat_all})
+#        compute_dist_time =time.time()
+#        print(f'compute dist time: {compute_dist_time - pocket_time}')
+
         # Step 9: Loop through each pocket
         for pocket in pocket_options:
             # Step 10: Compute the percent time contacts are formed
             per_all = []
             for i in range(len(res_pairs)):
-                pocket, contact = 0, 0
+                pocket_count, contact = 0, 0
                 for t in range(traj_cat.n_frames):
                     if pocket_list[t] == pocket:
-                        pocket += 1
-                        if dist[i, t] < DI.contact_cutoff:
+                        pocket_count += 1
+                        if dist[t, i] < DI.contact_cutoff:
                             contact += 1    
-                per_all.append(100*contact/pocket)
+                per_all.append(100*contact/pocket_count)
             
             # Step 11: Update saved files
-            df = pd.DataFrame({'Name': name[n], 'Pocket': pocket, 'Interaction Name': DI.interaction_name[d], 'Residue 1': pairs[:,0], 'Residue 2': pairs[:,1], 'Percent Interaction': per_all})
+            df = pd.DataFrame({'Name': name, 'Pocket': pocket, 'Interaction Name': DI.interaction_name[d], 'Residue 1': pairs[:,0], 'Residue 2': pairs[:,1], 'Percent Interaction': per_all})
+            df = df[df['Percent Interaction'] > 0]
             select_df = df[df['Percent Interaction'] > 75]
-            inter_per_df = pd.contact([inter_per_df, df])
-            inter_top_df = pd.contact([inter_top_df, select_df])
+            inter_per_df = pd.concat([inter_per_df, df])
+            inter_top_df = pd.concat([inter_top_df, select_df])
     del traj_cat
 # Step 12: Save output files
-cat_comp_df = pd.DataFrame({'Name': DI.name, 'Total Percent Catalytically Competant': cat_comp_per, 'Percent Catalytically Competant in Pocket A': cat_comp_per_by_pocket[0,:], 'Percent Catalytically Competant in Pocket B': cat_comp_per_by_pocket[1,:], 'Percent Catalytically Competant in Pocket C': cat_comp_per_by_pocket[2,:]})
+cat_comp_df = pd.DataFrame({'Name': DI.name, 'Total Percent Catalytically Competant': cat_comp_per, 'Percent Catalytically Competant in Pocket A': cat_comp_per_by_pocket[:,0], 'Percent Catalytically Competant in Pocket B': cat_comp_per_by_pocket[:,1], 'Percent Catalytically Competant in Pocket C': cat_comp_per_by_pocket[:,2]})
 cat_comp_df.to_csv(DI.output_cat_comp)
 
-dist_df.to_csv(DI.output_inter_dist)
+#dist_df.to_csv(DI.output_inter_dist)
 inter_per_df.to_csv(DI.output_inter_per)
 inter_top_df.to_csv(DI.output_top_inters)
